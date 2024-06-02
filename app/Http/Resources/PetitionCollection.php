@@ -22,7 +22,7 @@ class PetitionCollection extends ResourceCollection
         return [
             'data' => $this->collection,
             'version' => '1.0.0', // with every api responce this version, author data send. but it only returns using this way in controller "return new PetitionCollection(Petition::all());"
-            'author' => 'John Doe',
+            'author' => 'John Doe', // To return a collection of resources together with any meta data set in the Resource Collection class, you need to return `new PetitionCollection(Petition::all()); `
         ];
     }
 }

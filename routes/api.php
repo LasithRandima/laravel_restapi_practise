@@ -32,4 +32,4 @@ Route::apiResource('/petitions', PetitionController::class);
 
 
 // Author api routes
-Route::resource('/authors', AuthorController::class)->only(['index', 'store']);
+Route::resource('/authors', AuthorController::class)->only(['index', 'show']);
