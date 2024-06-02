@@ -61,6 +61,9 @@ class PetitionController extends Controller
      */
     public function destroy(Petition $petition)
     {
-        //
+        $petition->delete();
+        return response()->json(null, 204);
+
+        // return response()->noContent();
     }
 }
