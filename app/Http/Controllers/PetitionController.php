@@ -18,10 +18,10 @@ class PetitionController extends Controller
 
         // Display all the petition data using the PetitionResource collection. 2 ways
         // calling collection method under resource
-        return PetitionResource::collection(Petition::all());
+        // return PetitionResource::collection(Petition::all());
 
         // returning new collection
-        // return new PetitionCollection(Petition::all());
+        return new PetitionCollection(Petition::all());
     }
 
     /**
@@ -29,7 +29,11 @@ class PetitionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $petition = Petition::create($request->only([
+            'title', 'description', 'category', 'author' , 'signees'
+        ]));
+
+        return new PetitionResource($petition);
     }
 
     /**
